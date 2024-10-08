@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { useLocalStorage } from '@vueuse/core'
 
-const beginningInSeconds = useLocalStorage('cheat-time-start', 3);
-const multiplier = useLocalStorage('cheat-time-multiplier', 3);
-const speedIncreaseDurationInSeconds = useLocalStorage('speed-increase-duration', 5);
+const beginningInSeconds = useLocalStorage('cheat-time-start', 0);
+const multiplier = useLocalStorage('cheat-time-multiplier', 1);
+const speedIncreaseDurationInSeconds = useLocalStorage('speed-increase-duration', 0);
 </script>
 
 <template>

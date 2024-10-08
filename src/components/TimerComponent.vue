@@ -17,15 +17,15 @@ const formattedTime = computed(() =>
 )
 
 const INTERVAL_IN_MS = 10
-const beginningInSeconds = useLocalStorage('cheat-time-start', 3);
-const multiplier = useLocalStorage('cheat-time-multiplier', 3);
-const speedIncreaseDurationInSeconds = useLocalStorage('speed-increase-duration', 5);
+const beginningInSeconds = useLocalStorage('cheat-time-start', 0);
+const multiplier = useLocalStorage('cheat-time-multiplier', 1);
+const speedIncreaseDurationInSeconds = useLocalStorage('speed-increase-duration', 0);
 
 const timeMultiplier = computed(() => {
   const t = time.value;
   const t0 = beginningInSeconds.value * 1000; // Start time in milliseconds
   const t1 = t0 + speedIncreaseDurationInSeconds.value * 1000; // End time in milliseconds
-  const targetMultiplier = multiplier.value * 1.1;
+  const targetMultiplier = multiplier.value;
 
   if (t <= t0) {
     return 1;
